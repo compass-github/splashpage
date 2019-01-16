@@ -1,0 +1,84 @@
+<!--
+This sample web application provides a simple Click-Through Splash page for Cisco Meraki networks.
+Usage:
+* Configure your Cisco Meraki wireless network with a Click-through splash page.
+* Configure the "Custom URL" to point to your webserver that is hosting this HTML file.
+* Update the "Walled Garden" with the IP or Domain Name for your webserver and any supporting resources
+* Add any additional logic to forward the form data to your preferred service. By default, a simple alert
+displays the results of one form entry and then prints the Meraki provided parameters in the the footer. 
+
+Sample URL received from Meraki to this page.
+http://localhost:5000/?base_grant_url=https%3A%2F%2Fn143.network-auth.com%2Fsplash%2Fgrant&user_continue_url=http%3A%2F%2Fspeedof.me%2F&node_id=149624922840090&node_mac=88:15:44:60:1c:1a&gateway_id=149624922840090&client_ip=10.255.60.208&client_mac=f4:5c:89:9b:17:67
+
+
+This is example was written by:
+Cory Guynn
+www.InternetOfLEGO.com
+2016
+
+LICENSE: MIT
+"Have Fun!, use and abuse"
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> -->
+</head>
+
+<center><a href="http://developers.meraki.com"><img src="./img/compass-logo.png" width="30%"/></a></center>
+<br>
+<br>
+<p><strong>For Patients, Family, and Visitor use only. </strong><strong><br> </strong><strong>Compass Health associates are not permitted to use this network.</strong></p>
+<p><strong>Terms &amp; Conditions of Service</strong><strong><br> </strong>BY USING COMPASS HEALTH&#39;S PUBLIC WI-FI INTERNET SERVICE, YOU AGREE TO BE BOUND BY THE FOLLOWING TERMS AND CONDITIONS WHICH ARE A BINDING AGREEMENT BETWEEN YOU AND COMPASS HEALTH, INC.</p>
+<p><strong>Personal Use Only</strong><strong><br> </strong>you may use the service and technology provided to you by Compass Health for the sole purpose of accessing the Internet as described here. Compass Health will give you an IP address each time you access the Compass Health Public Wi-Fi and it may change. You may not use the Compass Health Public Wi-Fi for any other reason, including reselling any aspect of the Public Wi-Fi service. Other examples of improper activities include, without limitation:</p>
+<ul>
+    <li>Modifying, adapting, translating, or reverse engineering any portion of the COMPASS HEALTH Public Wi-Fi network</li>
+    <li>Attempting to break security, access, tamper with or use any unauthorized areas of the COMPASS HEALTH Public Wi-Fi</li>
+    <li>Attempting to collect or maintain any information about other users of the COMPASS HEALTH Public Wi-Fi (including usernames and/or email addresses) or other third parties for unauthorized purposes</li>
+    <li>Creating or transmitting unwanted electronic communications such as spam, or bulk commercial messages to other users or otherwise interfering with other user&#39;s enjoyment of the service</li>
+    <li>Engaging in any activity that infringes or misappropriates the intellectual property, publicity, privacy or other proprietary rights of others, including patents, copyrights, trademarks, service marks, trade secrets, or any other proprietary right of any third party, or that is defamatory, objectionable, unlawful or promotes or encourages illegal activity</li>
+    <li>The transfer of technology, software, or other materials in violation of applicable export laws and regulations, including but not limited to the U.S. Export Administration Regulations and Executive Orders</li>
+    <li>Distribution of any Internet viruses, worms, pinging, flooding, mail bombing, denial of service attacks, defects, Trojan horses or other items of a destructive nature</li>
+    <li>Accessing illegally or without authorization computers, accounts, equipment or networks belonging to another party, or attempting to penetrate security measures of another system. This includes any activity that may be used as a precursor to an attempted system penetration, including but not limited to port scans, stealth scans or other information gathering activity; or</li>
+    <li>Using COMPASS HEALTH Public Wi-Fi for any unlawful, untrue, stalking, harassing, libelous, defamatory, abusive, tortious, threatening, and obscene, hateful, abusive, harmful or otherwise objectionable purpose as determined in COMPASS HEALTH&#39;s sole discretion.</li>
+</ul>
+<p><strong>Changes in COMPASS HEALTH Terms of Service and COMPASS HEALTH Public Wi-Fi; Termination</strong><strong><br> </strong>We reserve the right to modify the COMPASS HEALTH Public Wi-Fi service and these Terms and Conditions of Service and any accompanying policies, for any reason, and without notice, including the right to terminate the service with or without notice. COMPASS HEALTH reserves the right to terminate your access to the COMPASS HEALTH Public Wi-Fi service immediately and without notice at its sole discretion. Please review these COMPASS HEALTH terms of service from time to time so that you will be apprised of any changes. Upon any such termination, any and all rights granted by COMPASS HEALTH to you shall terminate.</p>
+<p><strong>Wi-Fi Privacy Policy</strong><strong><br> </strong>We have the right, but not the obligation to monitor, intercept and disclose any transmissions over or using our Wi-Fi service, and to access, provide, and disclose your demographic account information and related information under certain circumstances (for example, in response to lawful process, orders, subpoenas, or warrants, or to protect our rights, users or property).</p>
+<p><strong>Your Responsibilities</strong><strong><br> </strong>you understand that COMPASS HEALTH Public Wi-Fi, which utilizes wireless technologies, is not inherently secure and that wireless communications can be intercepted by technology designed and intended for that purpose. We will not be liable to you or any other party for any lack of security that may result from your use of COMPASS HEALTH Public Wi-Fi. You agree that you are responsible for providing security measures that are suited for your intended use of COMPASS HEALTH Public Wi-Fi. For example, you shall take full responsibility for taking adequate measures for safeguarding your data from loss. Also, other than the Wi-Fi signal provided by COMPASS HEALTH, you must provide all equipment, technology and software to use COMPASS HEALTH Public Wi-Fi.</p>
+<p><strong>Disclaimers</strong><strong><br> </strong>THE SERVICES AND PRODUCTS ARE PROVIDED ON AN “AS IS” BASIS, AND YOUR USE THEREOF IS AT YOUR OWN RISK. COMPASS HEALTH DOES NOT MAKE, AND HEREBY DISCLAIMS, ANY AND ALL OTHER EXPRESS AND IMPLIED WARRANTIES OR CONDITIONS, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT AND TITLE, AND ANY WARRANTIES ARISING FROM A COURSE OF DEALING, USAGE, OR TRADE PRACTICE. COMPASS HEALTH DOES NOT WARRANT THAT THE SERVICES WILL PERFORM AT A PARTICULAR SPEED, OR WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE.</p>
+<p><strong>Limitation of Liability</strong><strong><br> </strong>UNDER NO CIRCUMSTANCES SHALL EITHER COMPASS HEALTH OR ITS OFFCIALS, REPRESENTATIVES, EMPLOYEES AGENTS OR AFFILIATES BE LIABLE FOR INCIDENTAL, CONSEQUENTIAL, INDIRECT, OR SPECIAL DAMAGES OF ANY NATURE, OR FOR ANY LOST REVENUES, LOST PROFITS OR LOSS OF BUSINESS REGARDLESS OF THE CAUSE AND WHETHER OR NOT FORESEEABLE. In addition, COMPASS HEALTH and its officials, representatives, employees, agents or affiliates will not be responsible for any damages, losses, expenses or costs that you suffer AS A RESULT OF: (i) any interruption or failure of the Services OR Products; (ii) the downloading or use of any information, data or materials obtained via the Services OR FROM THE Internet; (iii) any failure to complete a transaction on the Internet OR USING THE SERVICES or ANY loss of data due to delays, non-deliveries, mis-deliveries, or Service interruptions; (iv) ANYTHING BEYOND THE REASONABLE CONTROL OF THE COMPASS HEALTH, INCLUDING BUT NOT LIMITED TO any interruption or failure of a third party’s services, software, equipment or network; (v) any unauthorized use or modification of Services or Products or combination of Services or Products with other services, products or equipment; (VI) viruses, worms, Trojan horses, or other undesirable data or software; or (vii) the attempt by unauthorized users (e.g., hackers) to obtain access to your data, web-site, computers, or networks.</p>
+<p><strong>Indemnity</strong><strong><br> </strong>You agree to hold harmless and indemnify the COMPASS HEALTH, its officials, representatives, employees, agents or affiliates from and against any third party claim arising from or in any way related to your use of COMPASS HEALTH Public Wi-Fi, including any liability, damages or expense arising from all claims, losses, damages (actual and consequential), suits, judgments, litigation costs and attorneys' fees, of every kind and nature.<br> <br> <strong>Miscellaneous Provisions</strong><strong><br> </strong>These COMPASS HEALTH Terms and Conditions of Service will be governed by and construed in accordance with the laws of the State of Missouri. If for any reason a court of competent jurisdiction finds any provision or portion of the COMPASS HEALTH Terms and Conditions of Service to be unenforceable, the remainder of the COMPASS HEALTH Terms and Conditions of Service will continue in full force and effect.</p>
+<p>These COMPASS HEALTH Terms and Conditions of Service constitute the entire agreement between the parties and supersede and replace all prior understandings or agreements, written or oral, regarding COMPASS HEALTH Public Wi-Fi. Any waiver of any provision of the COMPASS HEALTH Terms and Conditions of Service will be effective only if in writing and signed by the Chief Operating Officer of COMPASS HEALTH.</p>
+<p><strong>Acceptance of Agreement by Use </strong><strong><br> </strong>You acknowledge that you have read and understood, and you agree to, each of the provisions in this “COMPASS HEALTH Public Wi-Fi Terms and Conditions of Service” document, and you represent and warrant that you are of legal age and authorized to enter a binding agreement and to accept and agree to become bound by the terms of this document. The agreement applies to you and to anyone who uses the COMPASS HEALTH Public Wi-Fi from your computer. By initiating, activating or using the COMPASS HEALTH Public Wi-Fi from your computer, you will have been deemed to have accepted the current version of the provisions of this “COMPASS HEALTH Public Wi-Fi Terms and Conditions of Service” document. If you do not agree to the terms of this document, you may not use the COMPASS HEALTH Public Wi-Fi from your computer.</p>
+<p> </p>
+<br>
+<br>
+<div class="container">
+    <form id="loginForm" action="#">
+        <!--        <center><a href="http://developers.meraki.com"><img src="./img/meraki-logo.png" width="50%"/></a></center>
+        <br>
+        <fieldset>
+          <input id="name" placeholder="Your name" type="text" tabindex="1" required autofocus>
+        </fieldset>
+        <fieldset>
+          <input id="email" placeholder="Your Email Address" type="email" tabindex="2" required>
+        </fieldset>
+        <fieldset>
+          <input id="company" placeholder="Your Company (optional)" type="text" tabindex="3">
+        </fieldset>
+		-->
+            <center> <button type="submit">Continue to the Internet</button> </center>
+    </form>
+</div>
+<hr>
+<h4>Debugging Stats</h4>
+<p><label>Base Grant URL: </label><label id="baseGrantURL"></label></p>
+<p><label>User Continue URL: </label><label id="userContinueURL"></label></p>
+<p><label>Client IP: </label><label id="clientIP"></label></p>
+<p><label>Client MAC: </label><label id="clientMAC"></label></p>
+<p><label>Access Point MAC: </label><label id="nodeMAC"></label></p>
+
+<script src="./js/meraki.js"></script>
+
+</html>
